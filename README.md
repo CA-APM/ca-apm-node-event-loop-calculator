@@ -3,8 +3,12 @@
 # Description
 This extension creates two additional metrics about the Node.js event loop.
 
-## Short Description
+This makes it easy to detect event loop stalls: when the `Event Loop Ticks Per Interval` drops to zero or a very low value.
 
+
+![Event Loop Stall](https://github.com/CA-APM/ca-apm-node-event-loop-calculator/images/Event-Loop-TickPerInterval.png "Event Loop Stall")
+
+## Short Description
 This extension creates two additional metrics about the Node.js event loop.
 
 ## APM version
