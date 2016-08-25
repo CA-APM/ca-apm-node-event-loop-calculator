@@ -2,7 +2,7 @@ function execute(metricData,javascriptResultSetHelper) {
 
     var i=0;  					// binding iterator
 
-	log.info("Node Event Loop Calculator called, " +  metricData.length);
+	log.debug("Node Event Loop Calculator called, " +  metricData.length);
 
 	// Collects Agent, Metric, and Values from the Input
     for (i=0; i < metricData.length; i++) {
@@ -21,7 +21,7 @@ function execute(metricData,javascriptResultSetHelper) {
 
 			var fullBTTree = agent +"|"+ metric;		// full path with agent name
 
-			log.info(fullBTTree + " Ticks Per Interval: " + count);
+			log.debug(fullBTTree + " Ticks Per Interval: " + count);
 
 			javascriptResultSetHelper.addMetric(fullBTTree + " Ticks Per Interval",
 				count, count, 0, count,
@@ -29,7 +29,7 @@ function execute(metricData,javascriptResultSetHelper) {
 				Packages.com.wily.introscope.spec.metric.MetricTypes.kLongIntervalCounter,
 				frequency);
 
-			log.info(fullBTTree + " Average Tick Time (ms): " + count + ", " +  value + ", " +  min + ", " +  max);
+			log.debug(fullBTTree + " Average Tick Time (ms): " + count + ", " +  value + ", " +  min + ", " +  max);
 
 			javascriptResultSetHelper.addMetric(fullBTTree + " Average Tick Time (ms)",
 				count, value, min, max,
@@ -39,7 +39,7 @@ function execute(metricData,javascriptResultSetHelper) {
 		}
     }
 
-	log.info("Node Event Loop Calculator finished");
+	log.debug("Node Event Loop Calculator finished");
 
     // return the result set
     return javascriptResultSetHelper;
